@@ -1,0 +1,59 @@
+.gradient-text {
+  opacity: 0.4;
+  display: flex;
+  color: #cceecc;
+  flex-direction: column;
+  font-family: "Abril Fatface", sans-serif;
+  background: linear-gradient(to right, crimson, pink, springgreen);
+  background-size: 200% 200%;
+  animation: rainbow 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* color:rgba(0,0,0,1); */
+  font-size: 80px;
+  padding: -110px;
+  letter-spacing: 0.5rem;
+  width: auto;
+  /* margin-bottom:-20px; */
+  margin: 20px 40px;
+  /* display:block; */
+  text-align: left;
+  transition: color 0.2s ease-in-out;
+  font-weight: 900;
+}
+/* chrome and chromium based */
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.gradient-text:hover {
+  color: rgba(0, 0, 0, 0);
+}
+.box-shadow {
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+}
+@keyframes rainbow {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+svg {
+  overflow: visible;
+  width: 100%;
+  height: 120px;
+}
