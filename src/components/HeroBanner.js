@@ -8,18 +8,21 @@ const HeroBanner = () => {
             {/* <Box sx={{ mt: '80px' }} pl="40px" >
                 <img src={Banner} />
             </Box> */}
-            <Stack direction='row' className='gradient-text'>
+            <Stack direction='row' className='gradient-text' >
                 <Stack direction='column'>
-                    <text>STONKS</text>
-                    <text>STSKNO</text>
-                    <text>TSNOKS</text>
-                    {/* <text>KNOSTS</text> */}
+                    <div>
+                        <div>STONKS</div>
+                        <div>STSKNO</div>
+                        <div>TSNOKS</div>
+                    </div>
                 </Stack>
                 <Stack direction='column'>
-                    <text>STONKSKST</text>
-                    <text>STSKNONTO</text>
-                    <text>TSNOKSOSN</text>
-                    {/* <text>KNOSTSKNO</text> */}
+                    <div overflow='hidden' >
+                        <div>STONKSKST</div>
+                        <div>STSKNONTO</div>
+                        <div>TSNOKSOSN</div>
+                        {/* <text>KNOSTSKNO</text> */}
+                    </div>
                 </Stack>
             </Stack>
             <Box >

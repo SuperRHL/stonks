@@ -4,7 +4,11 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useNavigate } from 'react-router-dom';
+import { Skeleton } from '@mui/material';
+import { useState, useEffect } from 'react';
 const StockCard = (item) => {
+    const navigate = useNavigate()
     const companyName = item.item.CompanyName
     const companySymbol = item.item.Symbol
     const priceChange = item.item.PriceChangePercentFormatted
@@ -12,8 +16,8 @@ const StockCard = (item) => {
     return (item &&
 
         <Card sx={{
-            'border-radius': '5px',
-            'box-shadow': '0px 16px 40px rgba(112, 144, 176, 0.2)',
+            'borderRadius': '5px',
+            'boxShadow': '0px 16px 40px rgba(112, 144, 176, 0.2)',
             display: 'flex', flexDirection: 'column', minWidth: { lg: '275px', sm: '240px', xs: '200px' }, minHeight: { lg: '230px', sm: '210px', xs: '200px' }
         }}  >
             <CardContent style={{ display: 'flex', flex: '1 0 auto', alignItems: 'flex-start', flexDirection: 'column' }}>
@@ -28,7 +32,7 @@ const StockCard = (item) => {
                 </Typography>
             </CardContent>
             <CardActions sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <Button size="small" >Learn More</Button>
+                <Button size="small" onClick={() => { navigate(`/stock/${companySymbol}`) } }>Learn More</Button>
             </CardActions>
         </Card >)
 

@@ -4,6 +4,7 @@ import HorizontalScrollBar from './HorizontalScrollBar'
 import { Box, Stack } from '@mui/material'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const StockList = () => {
+    
     const [company, setStock] = useState()
     useEffect(() => {
         const fetchStockMoverData = async () => {
