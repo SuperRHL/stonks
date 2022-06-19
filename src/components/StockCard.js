@@ -40,11 +40,11 @@ const StockCard = (stockSymbol) => {
                             'textOverflow': 'ellipsis',
                             'wordWrap': 'break-word',
                             'overflow': 'hidden',
-                            'maxHeight': '2.6em', fontWeight: '700', fontSize: { lg: '22px', sm: '20px', xs: '18px' }
+                            'maxHeight': '2.6em', fontWeight: '700', fontSize: { lg: '22px', sm: '20px', xs: '18px' }, color:'#027fff'
                         }}>
                             {companyName}
                         </Typography>
-                        <Typography sx={{ mb: 1.5, fontSize: { lg: '18px', sm: '16px', xs: '14px' } }} color="text.secondary">
+                        <Typography sx={{ mb: 1.5, fontSize: { lg: '18px', sm: '16px', xs: '14px' }, }} color="text.secondary">
                             {companySymbol}
                         </Typography>
                         <Typography variant="body2" sx={{ fontSize: { lg: '16px', sm: '14px', xs: '12px' } }}>
