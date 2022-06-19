@@ -1,13 +1,9 @@
 import React from 'react'
-import { Box, Button, Stack, Typography } from '@mui/material'
-import Banner from '../assets/images/banner.svg'
+import { Box, Button, Stack} from '@mui/material'
 const HeroBanner = () => {
 
     return (
         <Stack>
-            {/* <Box sx={{ mt: '80px' }} pl="40px" >
-                <img src={Banner} />
-            </Box> */}
             <Stack direction='row' className='gradient-text' >
                 <Stack direction='column'>
                     <div>
@@ -21,7 +17,6 @@ const HeroBanner = () => {
                         <div>STONKSKST</div>
                         <div>STSKNONTO</div>
                         <div>TSNOKSOSN</div>
-                        {/* <text>KNOSTSKNO</text> */}
                     </div>
                 </Stack>
             </Stack>

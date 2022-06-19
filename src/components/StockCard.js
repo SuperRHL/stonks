@@ -1,42 +1,67 @@
-import React from 'react'
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import React, { useState, useEffect } from 'react'
+import { Skeleton,Card,CardActions,CardContent,Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { Skeleton } from '@mui/material';
-import { useState, useEffect } from 'react';
-const StockCard = (item) => {
+import { fetchData, options } from '../utils/fetchData'
+const StockCard = (stockSymbol) => {
+    const stocks = require('stock-ticker-symbol');
     const navigate = useNavigate()
-    const companyName = item.item.CompanyName
-    const companySymbol = item.item.Symbol
-    const priceChange = item.item.PriceChangePercentFormatted
-    console.log(item)
-    return (item &&
+    const [company, setStockDetails] = useState()
+    const [isLoading, setIsLoading] = useState(false)
 
-        <Card sx={{
-            'borderRadius': '5px',
-            'boxShadow': '0px 16px 40px rgba(112, 144, 176, 0.2)',
-            display: 'flex', flexDirection: 'column', minWidth: { lg: '275px', sm: '240px', xs: '200px' }, minHeight: { lg: '230px', sm: '210px', xs: '200px' }
-        }}  >
-            <CardContent style={{ display: 'flex', flex: '1 0 auto', alignItems: 'flex-start', flexDirection: 'column' }}>
-                <Typography variant="h5" component="div" sx={{ fontWeight: '700', fontSize: { lg: '22px', sm: '20px', xs: '18px' } }}>
-                    {companyName}
-                </Typography>
-                <Typography sx={{ mb: 1.5, fontSize: { lg: '18px', sm: '16px', xs: '14px' } }} color="text.secondary">
-                    {companySymbol}
-                </Typography>
-                <Typography variant="body2" sx={{ fontSize: { lg: '16px', sm: '14px', xs: '12px' } }}>
-                    {priceChange}
-                </Typography>
-            </CardContent>
-            <CardActions sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <Button size="small" onClick={() => { navigate(`/stock/${companySymbol}`) } }>Learn More</Button>
-            </CardActions>
-        </Card >)
+    useEffect(() => {
+        const fetchStockDetails = async () => {
+            const stock = await fetchData(`https://realstonks.p.rapidapi.com/${stockSymbol.item}`, options)
+            setStockDetails(stock)
+            setIsLoading(true)
+        }
+        fetchStockDetails()
+    }, [])
+    console.log(company)
+
+    const companyName = stocks.lookup(stockSymbol.item)
+    const companySymbol = stockSymbol.item
+    // console.log(item)
 
 
+
+    return (
+
+        <div>
+            {isLoading ? (
+                <Card sx={{
+                    'borderRadius': '15px',
+                    'padding': '30px',
+                    // 'boxShadow': '0px 16px 40px rgba(112, 144, 176, 0.2)',
+                    boxShadow: 'none',
+                    display: 'flex', flexDirection: 'column', minWidth: { lg: '275px', sm: '240px', xs: '200px' }, minHeight: { lg: '180px', sm: '160px', xs: '150px' }
+                }}  >
+                    <CardContent style={{ display: 'flex', flex: '1 0 auto', alignItems: 'flex-start', flexDirection: 'column', padding: '0px' }}>
+                        <Typography variant="h4" component="div" sx={{
+                            'textOverflow': 'ellipsis',
+                            'wordWrap': 'break-word',
+                            'overflow': 'hidden',
+                            'maxHeight': '2.6em', fontWeight: '700', fontSize: { lg: '22px', sm: '20px', xs: '18px' }
+                        }}>
+                            {companyName}
+                        </Typography>
+                        <Typography sx={{ mb: 1.5, fontSize: { lg: '18px', sm: '16px', xs: '14px' } }} color="text.secondary">
+                            {companySymbol}
+                        </Typography>
+                        <Typography variant="body2" sx={{ fontSize: { lg: '16px', sm: '14px', xs: '12px' } }}>
+                            {`${company.change_percentage}%`}
+                        </Typography>
+                    </CardContent>
+                    <CardActions sx={{ display: 'flex', alignItems: 'left', justifyContent: 'space-between','padding':'0px' }}>
+                        <a href='' style={{'textDecoration':'none', 'padding':'0px'}} onClick={() => { navigate(`/stock/${companySymbol}`) }}>Learn more</a>
+                    </CardActions>
+                </Card >) : <Skeleton variant='rectangle' animation='wave' sx={{
+                    'borderRadius': '15px',
+                    'padding': '30px', minWidth: { lg: '275px', sm: '240px', xs: '200px' }, minHeight: { lg: '180px', sm: '160px', xs: '150px' }
+                }}></Skeleton>}
+        </div>
+
+
+    )
 }
 
 export default StockCard

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import { ScrollMenu, visibilityContext } from 'react-horizontal-scrolling-menu'
+import { ScrollMenu} from 'react-horizontal-scrolling-menu'
 import StockCard from './StockCard'
 
 const HorizontalScrollBar = ({ company, setStock }) => {
