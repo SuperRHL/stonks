@@ -52,7 +52,7 @@ const StockCard = (stockSymbol) => {
                         </Typography>
                     </CardContent>
                     <CardActions sx={{ display: 'flex', alignItems: 'left', justifyContent: 'space-between','padding':'0px' }}>
-                        <a href='' style={{'textDecoration':'none', 'padding':'0px'}} onClick={() => { navigate(`/stock/${companySymbol}`) }}>Learn more</a>
+                        <h4 style={{margin:'0px',color:'#0066cc' ,cursor:'pointer','textDecoration':'none', 'padding':'0px'}} onClick={() => { navigate(`/stock/${companySymbol}`) }}>Learn more</h4>
                     </CardActions>
                 </Card >) : <Skeleton variant='rectangle' animation='wave' sx={{
                     'borderRadius': '15px',

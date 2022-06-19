@@ -19,7 +19,7 @@ const StockList = () => {
             {/* <h1>{company}</h1> */}
             <Stack direction='row' alignItems='center'>
                 <Box sx={{ fontWeight: '700', fontSize: { lg: '48px', sm: '28px', xs: '26px' }, mb: '10px', ml: '40px' }}>Discover Stocks</Box>
-                <ArrowForwardIcon sx={{ mb: '10px' }} />
+                <ArrowForwardIcon fontSize='large' sx={{ml:'10px' }} />
             </Stack>
             <HorizontalScrollBar company={company} setStock={setStock}>
             </HorizontalScrollBar>
