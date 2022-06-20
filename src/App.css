@@ -7,6 +7,9 @@ html {
 :root {
   background-color: #f5f5f7;
 }
+.lift:hover {
+  box-shadow: 0px 16px 40px rgba(112, 144, 176, 0.2);
+}
 .my-masonry-grid {
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
@@ -66,8 +69,8 @@ html {
   background: linear-gradient(to right, crimson, pink, springgreen);
   background-size: 200% 200%;
   animation: rainbow 2s ease-in-out infinite;
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   /* color:rgba(0,0,0,1); */
   font-size: 7vw;
   padding: 0px;

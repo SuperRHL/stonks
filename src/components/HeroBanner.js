@@ -4,7 +4,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 const HeroBanner = () => {
 
     return (
-        <Stack>
+        <Stack style={{ overflow: 'hidden', display: 'flex',width: 'auto'}}>
             <Stack direction='row' className='gradient-text' >
                 <Stack direction='column'>
                     <div>
@@ -43,8 +43,8 @@ const HeroBanner = () => {
                         fontWeight: '400', letterSpacing: '0.011em', maxWidth: '60vw'
                     }}> Stonks is a place to learn about stocks and put that knowledge to use to increase your money for free. We believe that knowledge should not be limited by money.</Typography>
                     <Stack direction='row' alignItems='center' marginTop='20px' marginBottom='40px'>
-                        <Typography sx={{color: '#06c', fontSize: '21px', letterSpacing: '0.011em', cursor: 'pointer' }}>Get Started</Typography>
-                        <ChevronRightIcon sx={{color:'#06c'}}/>
+                        <Typography sx={{ color: '#06c', fontSize: '21px', letterSpacing: '0.011em', cursor: 'pointer' }}>Get Started</Typography>
+                        <ChevronRightIcon sx={{ color: '#06c' }} />
                     </Stack>
                 </Box>
 

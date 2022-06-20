@@ -1,9 +1,9 @@
 import React from 'react'
-
+import NewsCard from '../components/NewsCard'
 const Learn = () => {
     return (
         <div>
-            Learn
+            <NewsCard/>
         </div>
     )
 }
