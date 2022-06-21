@@ -13,7 +13,7 @@ const HeroBanner = () => {
                 width: '1920px',
                 margin: '1em auto',
                 // border: '1px solid red',
-                'justify-content': 'center'
+                'justifyContent': 'center'
             }}>
 
                 <img alt='banner' src={banner1} />
@@ -25,8 +25,8 @@ const HeroBanner = () => {
                         background: "#83D683"
                     }, fontWeight: '700', fontSize: { lg: '24px', sm: '16px', xs: '18px' }, m: '40px', mt: '0px', width: { lg: '250px', sm: '200px', xs: 'auto' }, height: { lg: '64px', sm: '50px', xs: '50px' }, background: '#B6E6B6', borderRadius: '79px'
                 }}  > Get Started</Button> */}
-                <Typography class='banner-eyebrow-text'>Stonks</Typography>
-                <Typography class='banner-text'>Investing <br /> For Literally <br /> Anyone</Typography>
+                <Typography id='banner-eyebrow-text'>Stonks</Typography>
+                <Typography id='banner-text'>Investing <br /> For Literally <br /> Anyone</Typography>
                 <Box display='flex' flexDirection='column' alignItems='center'>
 
                     <Typography className='hero-intro' sx={{
