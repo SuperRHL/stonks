@@ -9,7 +9,8 @@ const NewsCard = (props) => {
             // 'width': 'auto',
             // 'boxShadow': '0px 16px 40px rgba(112, 144, 176, 0.2)',
             boxShadow: 'none',
-            display: 'flex', flexDirection: 'column'
+            display: 'flex', flexDirection: 'column',
+            'backgroundColor': '#151516'
         }}>
 
             <CardMedia
@@ -30,10 +31,10 @@ const NewsCard = (props) => {
                 }}>
                     {props.title}
                 </Typography>
-                <Typography sx={{ mb: 1.5, fontSize: { lg: '18px', sm: '16px', xs: '14px' }, }} color="text.secondary">
+                <Typography sx={{ mb: 1.5, fontSize: { lg: '18px', sm: '16px', xs: '14px' }, }} color="#86868b">
                     {props.author}
                 </Typography>
-                <Typography variant="body2" sx={{ fontSize: { lg: '16px', sm: '14px', xs: '12px' } }}>
+                <Typography variant="body2" sx={{ fontSize: { lg: '16px', sm: '14px', xs: '12px' }, 'color': "#fff" }}>
                     {props.description}
                 </Typography>
             </CardContent>

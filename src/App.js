@@ -7,8 +7,15 @@ import Home from './pages/Home';
 import Learn from './pages/Learn';
 import Navbar from './components/Navbar'
 import StockDetails from './pages/StockDetails'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 // import Footer from './components/Footer';
 const App = () => {
+
+    const darkTheme = createTheme({
+        palette: {
+            mode: 'dark',
+        },
+    });
     return (
         <div>
             <Box width='400px' sx={{ width: { xl: '1488px' } }} m='auto'>

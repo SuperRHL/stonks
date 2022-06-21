@@ -1,28 +1,23 @@
 import React from 'react'
 import { Box, Button, Stack, Typography } from '@mui/material'
+import banner1 from '../assets/images/banner1.png'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 const HeroBanner = () => {
 
     return (
-        <Stack style={{ overflow: 'hidden', display: 'flex',width: 'auto'}}>
-            <Stack direction='row' className='gradient-text' >
-                <Stack direction='column'>
-                    <div>
-                        <div>STONKS</div>
-                        <div>STSKNO</div>
-                        <div>TSNOKS</div>
-                        <div>TSNOKS</div>
-                    </div>
-                </Stack>
-                <Stack direction='column'>
-                    <div overflow='hidden' >
-                        <div>STONKSKST</div>
-                        <div>STSKNONTO</div>
-                        <div>TSNOKSOSN</div>
-                        <div>TSNOKSOSN</div>
-                    </div>
-                </Stack>
-            </Stack>
+        <Stack style={{ overflow: 'hidden', display: 'flex', width: '100%' }}>
+            <div style={{
+                'height': '1080px',
+                overflow: 'hidden',
+                display: 'flex',
+                width: '1920px',
+                margin: '1em auto',
+                // border: '1px solid red',
+                'justify-content': 'center'
+            }}>
+
+                <img alt='banner' src={banner1} />
+            </div>
             <Box >
                 {/* <Button size='small' disableElevation variant="contained" href="#" sx={{
                     "&:hover": {
