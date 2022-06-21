@@ -2,7 +2,7 @@
 export const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'baf70df836msha7ba6dd074fe18ap153f1ejsn1b47e73b15a9',
+		'X-RapidAPI-Key': process.env.REACT_APP_API_KEY_REAL_STONKS,
 		'X-RapidAPI-Host': 'realstonks.p.rapidapi.com'
 	}
 };

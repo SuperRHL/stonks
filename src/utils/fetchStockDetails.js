@@ -1,7 +1,5 @@
 
-export const fetchStockData = async (symbol) => {
-    return fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=5NY8APHIDHCOG8RT`)
-        .then(response => response.json())
-        .then(response => {return response})
+export const fetchData = async (url) => {
+    return fetch(url).then((raw) => raw.json()).then((response) => { return response }).catch(()=>{console.error('aaaaaaaaa')})
 
 }

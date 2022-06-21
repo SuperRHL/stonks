@@ -16,7 +16,11 @@ const StockCard = (stockSymbol) => {
         }
         fetchStockDetails()
     }, [])
-    console.log(company)
+
+    useEffect(() => {
+        if (!company) return
+        console.log(company)
+    }, [company])
 
     const companyName = stocks.lookup(stockSymbol.item)
     const companySymbol = stockSymbol.item

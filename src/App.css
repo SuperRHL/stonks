@@ -33,7 +33,7 @@ html {
   /* background: grey; */
   margin-bottom: 30px;
 }
-.banner-text {
+#banner-text {
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
     sans-serif;
   font-size: 72px;
@@ -54,7 +54,7 @@ html {
   justify-items: center;
   align-items: center;
 }
-.banner-eyebrow-text {
+#banner-eyebrow-text {
   /* font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
     sans-serif; */
   font-size: 21px;
