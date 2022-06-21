@@ -1,6 +1,6 @@
 import { Box, Stack, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
+import React, { Component }  from 'react';
 const NewsCard = (props) => {
     return (
         <Card className='lift' sx={{

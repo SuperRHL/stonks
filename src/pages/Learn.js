@@ -1,9 +1,9 @@
 import React from 'react'
-import NewsCard from '../components/NewsCard'
+// import start from '../utils/stockScraper'
 const Learn = () => {
     return (
         <div>
-            <NewsCard/>
+            console.log(start('aapl'))
         </div>
     )
 }
