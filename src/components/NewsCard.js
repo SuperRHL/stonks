@@ -1,6 +1,6 @@
-import { Box, Stack, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import { Stack, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import React, { Component }  from 'react';
+import React from 'react';
 const NewsCard = (props) => {
     return (
         <Card className='lift' sx={{
@@ -17,8 +17,7 @@ const NewsCard = (props) => {
                 sx={{ 'borderRadius': '15px' }}
                 width='auto'
                 component="img"
-                style={{ 'objectFit': 'cover' }}
-                style={{ 'maxHeight': 200, justifyContent: "center", display: "flex" }}
+                style={{ 'objectFit': 'cover','maxHeight': 200, justifyContent: "center", display: "flex" }}
                 alt="green iguana"
                 src={props.source}
             />

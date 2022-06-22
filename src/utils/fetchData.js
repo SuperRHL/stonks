@@ -6,7 +6,7 @@ export const options = {
 		'X-RapidAPI-Host': 'realstonks.p.rapidapi.com'
 	}
 };
-export const fetchData = async (url,options) => {
-    return fetch(url,options).then((raw) => raw.json()).then((response) => { return response })
+export const fetchData = async (url) => {
+    return fetch(url).then((raw) => raw.json()).then((response) => { return response })
 
 }

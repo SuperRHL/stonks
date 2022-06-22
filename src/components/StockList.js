@@ -1,19 +1,37 @@
 import React, { useState, useEffect } from 'react'
-import { fetchData } from '../utils/fetchData'
+
 import HorizontalScrollBar from './HorizontalScrollBar'
 import { Box, Stack } from '@mui/material'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import axios from "axios";
 const StockList = () => {
 
-    const [company, setStock] = useState()
-    useEffect(() => {
-        const fetchStockMoverData = async () => {
-            const stock = await fetchData('./declare.json')
-            setStock(stock.splice(0, 10))
-        }
-        fetchStockMoverData()
-    }, [])
 
+    const [price, setPrice] = useState()
+    const company = ["AAPL", "MSFT", "GOOG", "AMZN", "TSLA", "TSM", "NVDA", "V", "JPM","NFLX"]
+
+    const options = {
+        method: 'GET',
+        url: 'https://stock-data2.p.rapidapi.com/v6/finance/quote',
+        params: { symbols: `${company.toString()}` },
+        headers: {
+            'X-RapidAPI-Key': 'baf70df836msha7ba6dd074fe18ap153f1ejsn1b47e73b15a9',
+            'X-RapidAPI-Host': 'stock-data2.p.rapidapi.com'
+        }
+    };
+    useEffect(() => {
+        const fetchStockPrice = async () => {
+            axios.request(options).then(function (response) {
+                setPrice(response.data.quoteResponse.result);
+                
+            }).catch(function (error) {
+                console.error(error);
+            });
+            
+        }
+        fetchStockPrice()
+    }, [])
+    
     return (company &&
         <Box>
             {/* <h1>{company}</h1> */}
@@ -21,7 +39,7 @@ const StockList = () => {
                 <Box sx={{ fontWeight: '700', fontSize: { lg: '48px', sm: '28px', xs: '26px' }, mb: '10px', ml: '40px' }}>Discover Stocks</Box>
                 <ArrowForwardIcon fontSize='large' sx={{ ml: '10px' }} />
             </Stack>
-            <HorizontalScrollBar company={company} setStock={setStock}>
+            <HorizontalScrollBar company={company} price={price}>
             </HorizontalScrollBar>
         </Box>
 

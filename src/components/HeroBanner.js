@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import banner1 from '../assets/images/banner1.png'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 const HeroBanner = () => {

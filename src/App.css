@@ -1,5 +1,5 @@
 html {
-  background-color: #000000;
+  
   color: white;
   margin: 0;
   overflow-x: hidden;
@@ -34,8 +34,8 @@ html {
   margin-bottom: 30px;
 }
 #banner-text {
-  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
-    sans-serif;
+  /* font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, */
+    /* sans-serif; */
   font-size: 72px;
   /* letter-spacing: 0.5rem; */
   margin: 0px;
@@ -65,34 +65,6 @@ html {
   letter-spacing: 0.011em;
   font-weight: 600;
 }
-.gradient-text {
-  opacity: 0.4;
-  display: flex;
-  color: #cceecc;
-  flex-direction: column;
-  font-family: "Abril Fatface", sans-serif;
-  background: linear-gradient(to right, crimson, pink, springgreen);
-  background-size: 200% 200%;
-  animation: rainbow 2s ease-in-out infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* color:rgba(0,0,0,1); */
-  font-size: 7vw;
-  padding: 0px;
-
-  letter-spacing: 0.5rem;
-  width: auto;
-  min-width: 100%;
-  /* margin:0px; */
-  /* margin-left:-20px; */
-
-  margin: 20px 40px;
-  /* margin-right:0px; */
-  display: block;
-  text-align: center;
-  transition: color 0.2s ease-in-out;
-  font-weight: 900;
-}
 /* chrome and chromium based */
 .react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
   display: none;
@@ -103,30 +75,3 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 
-.gradient-text:hover {
-  color: rgba(0, 0, 0, 0);
-}
-.box-shadow {
-  border-radius: 30px;
-
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
-}
-@keyframes rainbow {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-}
-
-svg {
-  overflow: visible;
-  width: 100%;
-  height: 120px;
-}
