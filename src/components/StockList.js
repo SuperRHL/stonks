@@ -10,10 +10,7 @@ const StockList = () => {
     const [price, setPrice] = useState(null)
     const company = ["AAPL", "AMZN", "GOOG", "JPM", "MSFT", "NFLX", "NVDA", "TSLA", "TSM", "V"]
 
-    const options = {
-        method: 'GET',
-        url: `https://financialmodelingprep.com/api/v3/stock-price-change/AAPL,MSFT,GOOG,AMZN,TSLA,TSM,NVDA,V,JPM,NFLX?apikey=${process.env.REACT_APP_FPM_KEY}`,
-    };
+   
     useEffect(() => {
         fetch(`https://financialmodelingprep.com/api/v3/stock-price-change/AAPL,MSFT,GOOG,AMZN,TSLA,TSM,NVDA,V,JPM,NFLX?apikey=${process.env.REACT_APP_FPM_KEY}`).then(res => res.json()).then((result) => { setPrice(result.map(function (a) { return a['1D']; })) })
     }, [])
