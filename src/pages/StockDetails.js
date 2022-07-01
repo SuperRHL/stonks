@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { Box, Card, CardContent, Typography } from '@mui/material'
-import { fetchData } from '../utils/fetchStockDetails'
+import { fetchData } from '../utils/fetchData'
 import Masonry from 'react-masonry-css'
 import NewsCard from '../components/NewsCard.js'
 // import StockNews from '../components/StockNews'
@@ -14,13 +14,13 @@ const StockDetails = () => {
 
 
 
-    const apiKey = [process.env.REACT_APP_API_KEY_1, process.env.REACT_APP_API_KEY_1, process.env.REACT_APP_API_KEY_1]
+    const apiKey = process.env.REACT_APP_VANTAGE_API_KEY
     const fetchStockDetails = async (symbol) => {
-        const stock = await fetchData(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=${apiKey[Math.floor(Math.random() * apiKey.length)]}`)
+        const stock = await fetchData(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=${apiKey}`)
         return stock
     }
     const fetchNewsData = async () => {
-        const news = await fetchData(`https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${symbol}&topics=${company.Sector}&limit=20&apikey=${apiKey[Math.floor(Math.random() * apiKey.length)]}`)
+        const news = await fetchData(`https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${symbol}&topics=${company.Sector}&limit=20&apikey=${apiKey}`)
         return news
     }
     useEffect(() => {

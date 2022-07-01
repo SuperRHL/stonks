@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { fetchData } from '../utils/fetchStockDetails'
+import { fetchData } from '../utils/fetchData'
 import { Box, Stack, Skeleton } from '@mui/material'
 import { ScrollMenu } from 'react-horizontal-scrolling-menu'
 import HomeNewsCard from '../components/HomeNewsCard'
