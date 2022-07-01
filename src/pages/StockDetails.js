@@ -30,7 +30,6 @@ const StockDetails = () => {
             .then(() => { if (company && news) { setLoading(false) } })
 
     }, [symbol])
-    // console.log(company)
     const breakpoints = {
         default: 3,
         1100: 2,

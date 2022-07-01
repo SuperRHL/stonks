@@ -7,7 +7,7 @@ import axios from "axios";
 const StockList = () => {
 
 
-    const [price, setPrice] = useState()
+    const [price, setPrice] = useState(null)
     const company = ["AAPL", "AMZN", "GOOG", "JPM", "MSFT", "NFLX", "NVDA", "TSLA", "TSM", "V"]
 
     const options = {
@@ -15,25 +15,12 @@ const StockList = () => {
         url: `https://financialmodelingprep.com/api/v3/stock-price-change/AAPL,MSFT,GOOG,AMZN,TSLA,TSM,NVDA,V,JPM,NFLX?apikey=${process.env.REACT_APP_FPM_KEY}`,
     };
     useEffect(() => {
-        const fetchStockPrice = async () => {
-            axios.request(options).then(function (response) {
-                const arr = response.data.map(function(a) {return a['1D'];})
-                setPrice(arr);
-
-                
-
-            }).catch(function (error) {
-                console.error(error);
-            });
-
-        }
-        // axios.request(options).then((res)=>{console.log(res)})
-        fetchStockPrice()
+        fetch(`https://financialmodelingprep.com/api/v3/stock-price-change/AAPL,MSFT,GOOG,AMZN,TSLA,TSM,NVDA,V,JPM,NFLX?apikey=${process.env.REACT_APP_FPM_KEY}`).then(res => res.json()).then((result) => { setPrice(result.map(function (a) { return a['1D']; })) })
     }, [])
 
+    
     return (company &&
         <Box>
-            {/* <h1>{company}</h1> */}
             <Stack direction='row' alignItems='center'>
                 <Box sx={{ fontWeight: '700', fontSize: { lg: '48px', sm: '28px', xs: '26px' }, mb: '10px', ml: '40px' }}>Discover Stocks</Box>
                 <ArrowForwardIcon fontSize='large' sx={{ ml: '10px' }} />

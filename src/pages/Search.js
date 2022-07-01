@@ -13,7 +13,7 @@ const Search = () => {
                 `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${search}&apikey=5NY8APHIDHCOG8RT`
             )
             .then(response => {
-                console.log(response.data.bestMatches)
+                
                 setSearchData(response.data.bestMatches.filter(item => !item['1. symbol'].includes('.')));
                 setLoading(false);
             })
@@ -47,7 +47,7 @@ const Search = () => {
                 searchData.map((item, i) => {
                     return (<SearchCard item={item} key={i}></SearchCard>)
                 })
-            ) : console.log('Unable to complete search.')}</div>
+            ) : null}</div>
         </div>
     );
 }

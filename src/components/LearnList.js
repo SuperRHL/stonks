@@ -25,7 +25,7 @@ const LearnList = () => {
         })
 
     }, [])
-    console.log(data)
+    
 
 
 
@@ -44,7 +44,7 @@ const LearnList = () => {
 
             </ScrollMenu>
         </div>
-        // : console.log('loading')
+        
     )
 }
 

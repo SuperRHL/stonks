@@ -3,7 +3,7 @@ import { Skeleton, Card, CardActions, CardContent, Typography, Stack, CardMedia 
 import { useNavigate } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 const LearnCard = (props) => {
-    console.log(props)
+    
 
     const author = props.author
     const navigate = useNavigate()

@@ -12,7 +12,7 @@ const BlogDetails = () => {
     useEffect(() => {
         onSnapshot(doc(db, "Blogs", key), (doc) => { setData(doc.data()) })
     }, [])
-    // console.log(data)
+    
     return (
         <div>
             <div style={{
