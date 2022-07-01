@@ -8,30 +8,29 @@ const StockList = () => {
 
 
     const [price, setPrice] = useState()
-    const company = ["AAPL", "MSFT", "GOOG", "AMZN", "TSLA", "TSM", "NVDA", "V", "JPM","NFLX"]
+    const company = ["AAPL", "AMZN", "GOOG", "JPM", "MSFT", "NFLX", "NVDA", "TSLA", "TSM", "V"]
 
     const options = {
         method: 'GET',
-        url: 'https://stock-data2.p.rapidapi.com/v6/finance/quote',
-        params: { symbols: `${company.toString()}` },
-        headers: {
-            'X-RapidAPI-Key': 'baf70df836msha7ba6dd074fe18ap153f1ejsn1b47e73b15a9',
-            'X-RapidAPI-Host': 'stock-data2.p.rapidapi.com'
-        }
+        url: `https://financialmodelingprep.com/api/v3/stock-price-change/AAPL,MSFT,GOOG,AMZN,TSLA,TSM,NVDA,V,JPM,NFLX?apikey=${process.env.REACT_APP_FPM_KEY}`,
     };
     useEffect(() => {
         const fetchStockPrice = async () => {
             axios.request(options).then(function (response) {
-                setPrice(response.data.quoteResponse.result);
+                const arr = response.data.map(function(a) {return a['1D'];})
+                setPrice(arr);
+
                 
+
             }).catch(function (error) {
                 console.error(error);
             });
-            
+
         }
+        // axios.request(options).then((res)=>{console.log(res)})
         fetchStockPrice()
     }, [])
-    
+
     return (company &&
         <Box>
             {/* <h1>{company}</h1> */}

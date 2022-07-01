@@ -8,7 +8,7 @@ const HorizontalScrollBar = ({ company, price }) => {
         <ScrollMenu>
             {company.map((item, i) => (
                 <Box key={item.id || item} itemId={item.id || item} title={item.id || item} ml=" 40px" mb='40px' mt='10px' p='20px 0px'>
-                    <StockCard item={item} price={price ? `${price[i].regularMarketChangePercent.toFixed(2)}%`:'Price not available'} />
+                    <StockCard item={item} price={price ? `${price[i]}%`:'Price not available'} />
                 </Box>
             ))}
 
