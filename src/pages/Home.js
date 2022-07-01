@@ -12,7 +12,6 @@ const Home = () => {
             <StockList />
             <NewsList />
             <LearnList />
-            <Footer />
         </Box>
     )
 }

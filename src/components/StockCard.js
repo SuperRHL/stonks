@@ -33,7 +33,7 @@ const StockCard = (stockSymbol) => {
                             {companySymbol}
                         </Typography>
                         <Typography variant="body2" sx={{ fontSize: { lg: '16px', sm: '14px', xs: '12px', 'color': '#fff' } }}>
-                            {`${stockSymbol.price.toFixed(2)}%`}
+                            {stockSymbol.price}
                         </Typography>
                     </CardContent>
                     <CardActions sx={{ display: 'flex', alignItems: 'left', justifyContent: 'space-between', 'padding': '0px' }}>

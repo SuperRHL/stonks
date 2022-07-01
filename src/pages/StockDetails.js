@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { Box, Card, CardContent, Typography} from '@mui/material'
+import { Box, Card, CardContent, Typography } from '@mui/material'
 import { fetchData } from '../utils/fetchStockDetails'
 import Masonry from 'react-masonry-css'
 import NewsCard from '../components/NewsCard.js'
@@ -11,10 +11,10 @@ const StockDetails = () => {
     const [company, setStockDetails] = useState([])
     const [isLoading, setLoading] = useState(true)
     const { symbol } = useParams([]);
-    
 
 
-    const apiKey = [process.env.REACT_APP_API_KEY_1,process.env.REACT_APP_API_KEY_1,process.env.REACT_APP_API_KEY_1]
+
+    const apiKey = [process.env.REACT_APP_API_KEY_1, process.env.REACT_APP_API_KEY_1, process.env.REACT_APP_API_KEY_1]
     const fetchStockDetails = async (symbol) => {
         const stock = await fetchData(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=${apiKey[Math.floor(Math.random() * apiKey.length)]}`)
         return stock
@@ -188,12 +188,12 @@ const StockDetails = () => {
                 <Typography color='#049cb7' fontSize='40px' fontWeight='600' paddingBottom='20px' marginLeft='30px'>News</Typography>
                 {/* <StockNews company={company.Symbol} market={company.Sector}/> */}
                 <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column" >
-                    
+
                     {news ? news.map((item) => (
                         <Box key={item.url + Math.random(100)} >
                             <NewsCard source={item.banner_image} title={item.title} author={item.source} description={item.summary} url={item.url} />
                         </Box>
-                    )):<p>Loading</p>}
+                    )) : <div>Loading...</div>}
                 </Masonry>
             </Box >
         )

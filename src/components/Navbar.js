@@ -17,7 +17,9 @@ const Navbar = () => {
                 <Stack alignItems='center' direction='row' gap="40px" fontSize="18px" sx={{ fontFamily: 'roboto', fontWeight: '600' }}>
                     <Link to='/' style={{ textDecoration: "none", color: "#fff" }}>Home</Link>
                     <Link to='/learn' style={{ textDecoration: "none", color: "#fff" }}>Learn</Link>
-                    <SearchRoundedIcon />
+                    <Link to='/search' style={{ textDecoration: "none", color: "#fff" }}>
+                        <SearchRoundedIcon />
+                    </Link>
                     {/* <Link to='/search' style={{textDecoration: "none", color: "#3A1212" }}>Search</Link> */}
                 </Stack>
             </Stack>
