@@ -7,7 +7,7 @@ import Footer from '../components/Footer.js'
 import { Box } from '@mui/material'
 const Home = () => {
     return (
-        <Box>
+        <Box style={{width: '100%'}}>
             <HeroBanner />
             <StockList />
             <NewsList />

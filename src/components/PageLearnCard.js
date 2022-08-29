@@ -1,7 +1,7 @@
 import { Stack, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import React from 'react';
-const NewsCard = (props) => {
+const PageLearnCard = (props) => {
     return (
         <Card className='lift' sx={{
             'borderRadius': '15px',
@@ -19,7 +19,7 @@ const NewsCard = (props) => {
                 component="img"
                 style={{ 'objectFit': 'cover','maxHeight': 200, justifyContent: "center", display: "flex" }}
                 alt="green iguana"
-                src={props.source?props.source:"https://images.unsplash.com/photo-1640340434855-6084b1f4901c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"}
+                src={props.banner}
             />
 
 
@@ -39,10 +39,10 @@ const NewsCard = (props) => {
             </CardContent>
             <CardActions sx={{ mt: 1.5, display: 'flex', alignItems: 'left', justifyContent: 'space-between', 'padding': '0px' }}>
                 <Stack direction='row' alignItems='center' style={{ cursor: 'pointer' }} onClick={() => { window.open(props.url) }} >
-                    <h4 style={{ margin: '0px', color: '#1976D2', 'textDecoration': 'none', 'padding': '0px' }} >Learn more</h4>
+                    <h4 style={{ margin: '0px', color: '#0066cc', 'textDecoration': 'none', 'padding': '0px' }} >Learn more</h4>
                     <ChevronRightIcon sx={{ color: '#06c' }} />
                 </Stack>
             </CardActions>
         </Card >)
 }
-export default NewsCard
+export default PageLearnCard

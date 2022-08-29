@@ -13,7 +13,7 @@ const Search = () => {
                 `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${search}&apikey=5NY8APHIDHCOG8RT`
             )
             .then(response => {
-                
+
                 setSearchData(response.data.bestMatches.filter(item => !item['1. symbol'].includes('.')));
                 setLoading(false);
             })
@@ -23,12 +23,18 @@ const Search = () => {
             });
     };
     return (
-        <div style={{ 'minHeight': '100vh', }}>
+        <div style={{ 'minHeight': '100vh' }}>
+
             <div style={{
-                'justifyContent': 'center',
+                display: "flex", flexDirection: "row",
+                alignItems: 'center',
+                justifyContent: "center",
                 'textAlign': 'center',
             }}>
-                <input
+                <div className="bar">
+                    <input className="searchbar" type="text" title="Search" onBlur={e => setSearch(e.target.value)}
+                        placeholder="search products"></input></div>
+                {/* <input
                     border='4px solid #ccecce'
                     width='575px'
                     height='30px'
@@ -37,9 +43,9 @@ const Search = () => {
                     type="text"
                     onBlur={e => setSearch(e.target.value)}
                     placeholder="search products"
-                />
+                /> */}
 
-                <button onClick={getData}>Search</button>
+                <button className="searchButton" onClick={getData}>Search</button>
             </div>
 
             <div>{searchData ? (

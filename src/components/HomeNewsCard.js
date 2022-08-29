@@ -16,7 +16,7 @@ const HomeNewsCard = (props) => {
             boxShadow: 'none',
 
             display: 'flex', flexDirection: 'column', minWidth: { lg: '275px', sm: '240px', xs: '200px' }, minHeight: { lg: '180px', sm: '160px', xs: '150px' },
-            'backgroundColor': '#151516'
+            'backgroundColor': 'rgba(255, 255, 255, 0.05)'
         }}>
             <div>
 
@@ -38,7 +38,7 @@ const HomeNewsCard = (props) => {
                         'WebkitBoxOrient': 'vertical',
                         'WebkitLineClamp': '3',
                         'overflow': 'hidden',
-                        fontWeight: '700', fontSize: { lg: '22px', sm: '20px', xs: '18px' }, color: '#049cb7'
+                        fontWeight: '700', fontSize: { lg: '22px', sm: '20px', xs: '18px' }, color: '#90CAF9'
                     }}>
                         {props.title}
                     </Typography>
@@ -61,7 +61,7 @@ const HomeNewsCard = (props) => {
 
             }}>
                 <Stack direction='row' alignItems='center' style={{ cursor: 'pointer' }} onClick={() => { window.open(props.url) }} >
-                    <h4 style={{ margin: '0px', color: '#0066cc', 'textDecoration': 'none', 'padding': '0px' }} >Learn more</h4>
+                    <h4 style={{ margin: '0px', color: '#1976D2', 'textDecoration': 'none', 'padding': '0px' }} >Learn more</h4>
                     <ChevronRightIcon sx={{ color: '#06c' }} />
                 </Stack>
             </CardActions>

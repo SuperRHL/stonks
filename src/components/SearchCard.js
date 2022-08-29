@@ -7,7 +7,7 @@ const SearchCard = (props) => {
         <Card sx={{
             'borderRadius': '15px',
             'padding': '30px',
-            'backgroundColor': '#151516',
+            'backgroundColor': 'rgba(255, 255, 255, 0.05)',
             margin:'30px',
             // 'boxShadow': '0px 16px 40px rgba(112, 144, 176, 0.2)',
             boxShadow: 'none',

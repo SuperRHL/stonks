@@ -16,6 +16,9 @@ const Navbar = () => {
             left: 0,
             bottom: 0,
             right: 0,
+            margin: 0,
+            width: "100%",
+            overflow: "hidden"
             
         }}>
             <Stack direction='row' justifyContent='space-between' sx={{ gap: { sm: '122px', xs: '40px' }, m: '20px' }}>
@@ -29,7 +32,11 @@ const Navbar = () => {
                         <ChevronRightIcon sx={{ color: '#06c' }} />
                     </Stack>
                     <Stack direction='row' alignItems='center' style={{ cursor: 'pointer' }} onClick={() => { window.open(`mailto:rahul.stonks@outlook.com`) }} >
-                        <h4 style={{ margin: '0px', color: '#0066cc', 'textDecoration': 'none', 'padding': '0px' }} >Contact us</h4>
+                        <h4 style={{ margin: '0px', color: '#0066cc', 'textDecoration': 'none', 'padding': '0px' }} >Contact</h4>
+                        <ChevronRightIcon sx={{ color: '#06c' }} />
+                    </Stack>
+                    <Stack direction='row' alignItems='center' style={{ cursor: 'pointer' }} onClick={() => { window.open(`https://revolut.me/rowlpay`) }} >
+                        <h4 style={{ margin: '0px', color: '#0066cc', 'textDecoration': 'none', 'padding': '0px' }} >Donate</h4>
                         <ChevronRightIcon sx={{ color: '#06c' }} />
                     </Stack>
                     {/* <Link to='' style={{ textDecoration: "none", color: "#fff" }}>About</Link> */}
