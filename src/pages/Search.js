@@ -26,14 +26,14 @@ const Search = () => {
         <div style={{ 'minHeight': '100vh' }}>
 
             <div style={{
-                display: "flex", flexDirection: "row",
+                display: "flex", flexDirection: "column",
                 alignItems: 'center',
                 justifyContent: "center",
                 'textAlign': 'center',
             }}>
-                <div className="bar">
+                <div className="bar" width="1vw">
                     <input className="searchbar" type="text" title="Search" onBlur={e => setSearch(e.target.value)}
-                        placeholder="search products"></input></div>
+                        placeholder="search products" width="1vw"></input></div>
                 {/* <input
                     border='4px solid #ccecce'
                     width='575px'

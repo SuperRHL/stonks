@@ -21,11 +21,11 @@ const Navbar = () => {
             overflow: "hidden"
             
         }}>
-            <Stack direction='row' justifyContent='space-between' sx={{ gap: { sm: '122px', xs: '40px' }, m: '20px' }}>
+            <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ gap: { sm: '122px', xs: '40px' }, m: '20px' }}>
                 <Link to='/'>
                     <img src={logo} alt='logo' style={{ width: "52px", height: "52px", margin: "0 20px" }}></img>
                 </Link>
-                <Stack alignItems='center' direction='row' gap="40px" fontSize="18px" sx={{ fontFamily: 'roboto', fontWeight: '600' }}>
+                <Stack alignItems='center' direction='column' gap="40px" fontSize="18px" sx={{ fontFamily: 'roboto', fontWeight: '600' }}>
                     {/* <Link to='/' style={{ textDecoration: "none", color: "#fff" }}>Home</Link> */}
                     <Stack direction='row' alignItems='center' style={{ cursor: 'pointer' }} onClick={() => { window.open(`https://www.linkedin.com/in/rahul-ahuja-/`) }} >
                         <h4 style={{ margin: '0px', color: '#0066cc', 'textDecoration': 'none', 'padding': '0px' }} >About us</h4>
