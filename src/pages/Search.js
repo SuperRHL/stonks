@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import SearchCard from '../components/SearchCard'
-
+import { useEffect } from "react";
 const Search = () => {
     const [search, setSearch] = useState("");
     const [searchData, setSearchData] = useState();
     const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     const getData = () => {
         setLoading(true);
         axios

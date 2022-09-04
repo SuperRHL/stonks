@@ -2,8 +2,11 @@ import React from 'react'
 import { Stack } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
+import {useEffect} from 'react';
 const PageNotFound = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     const navigate = useNavigate()
     return (
         <div style={{ 'minHeight': '100vh', margin: 'auto', marginTop: '20vh', 'display': 'flex', flexDirection: 'column', alignItems: 'center' }}>

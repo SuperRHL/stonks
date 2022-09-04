@@ -15,6 +15,7 @@ const Learn = () => {
     const [isLoading, setLoading] = useState(true)
     // const app = initializeApp(firebaseConfig)
     useEffect(() => {
+        window.scrollTo(0, 0)
         const blogref = collection(db, "Blogs")
         const q = query(blogref)
         onSnapshot(q, (snapshot) => {

@@ -7,9 +7,10 @@ import Masonry from 'react-masonry-css'
 import NewsCard from '../components/NewsCard.js'
 import Loading from '../components/Loading'
 import PageNotFound from './PageNotFound'
-
+import Chart from '../components/Chart'
 // import StockNews from '../components/StockNews'
 const StockDetails = () => {
+    
     const [news, setNews] = useState([])
     const [company, setStockDetails] = useState([])
     const [isLoading, setLoading] = useState(true)
@@ -27,6 +28,7 @@ const StockDetails = () => {
         return news
     }
     useEffect(() => {
+        window.scrollTo(0, 0)
         if (!symbol) return
         fetchStockDetails(symbol).then((res) => { setStockDetails(res) })
         fetchNewsData().then((res) => { setNews(res.feed) })
@@ -50,7 +52,8 @@ const StockDetails = () => {
         } else {
             return (
                 <Box margin='40px'>
-                    <Typography color='#027fff' fontSize='40px' fontWeight='600' paddingBottom='20px' marginLeft='30px'>Stock Details</Typography>
+                    <Typography color='#027fff' fontSize='40px' fontWeight='600' paddingBottom='20px' >Stock Details</Typography>
+                    <Chart></Chart>
                     <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column" >
                         <div>
                             <Card sx={{

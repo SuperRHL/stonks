@@ -10,6 +10,7 @@ const BlogDetails = () => {
 
     const [data, setData] = useState([])
     useEffect(() => {
+        window.scrollTo(0, 0)
         onSnapshot(doc(db, "Blogs", key), (doc) => { setData(doc.data()) })
     }, [])
     
