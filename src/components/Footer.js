@@ -22,8 +22,8 @@ const Navbar = () => {
             
         }}>
             <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ gap: { sm: '122px', xs: '40px' }, m: '20px' }}>
-                <Link to='/'>
-                    <img src={logo} alt='logo' style={{ width: "52px", height: "52px", margin: "0 20px" }}></img>
+                <Link to='/' style={{color: 'white', textDecoration: 'none'}}>
+                    <h2 >Stonks.</h2>
                 </Link>
                 <Stack alignItems='center' direction='column' gap="40px" fontSize="18px" sx={{ fontFamily: 'roboto', fontWeight: '600' }}>
                     {/* <Link to='/' style={{ textDecoration: "none", color: "#fff" }}>Home</Link> */}
